@@ -40,3 +40,15 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+
+export const fetchUsers = createAsyncThunk(
+  "users/users",
+  async (config, thunkAPI) => {
+    const respose = await axios.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    return respose.data;
+  }
+);
